@@ -34,6 +34,7 @@ How do I set this thing up?
 3. Define your ldap servers in default/ldap.conf and move this to local/ldap.conf
 4. Setup Splunk to use scripted authentication, and point $SPLUNK_HOME/etc/system/local/autentication.conf to bin/ldap-auth.py
 5. Reload auth:  splunk reload auth
+6. Restart Splunk
 
 
 ### Author: Nick MacCarthy
