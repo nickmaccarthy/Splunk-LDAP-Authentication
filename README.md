@@ -12,7 +12,7 @@ Splunks built in AD relies on user roles being defined in AD first, then mapped 
 
 Where are my users defined?
 ----------------------------------
-Users are defined in local/users.csv.   You can use the default/users.csv as a reference.  Multiple roles can be assigned to users by delmiting them with a ":"
+Users are defined in local/users.csv.   You can use the default/users.csv as a reference.  Multiple roles can be assigned to users by delmiting them with a ":", ex: "admin:power", "admin:power:can_delete"
 
 
 What are the requirements?
