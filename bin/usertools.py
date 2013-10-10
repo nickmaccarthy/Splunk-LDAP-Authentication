@@ -37,8 +37,10 @@ class usertools(object):
             fullname = "%s %s - %s" % ( row['First Name'].strip(), row['Last Name'].strip(), row['Team'].strip() )
             roles = row['Splunk Roles'].strip()
 
+            ## Deprecated 10/2013, no longer need both both domain\user and user
             ## Make both the domain\user and regular username dictionary so we can find users no matter which username they used to log in with
-            export["%s\\%s" % (row['Domain'].upper(), row['Username'])] = ( domain, username, fullname, roles )
+            ##export["%s\\%s" % (row['Domain'].upper(), row['Username'])] = ( domain, username, fullname, roles )
+
             export[row['Username']] = ( domain, username, fullname, roles )
 
         return export
