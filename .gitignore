@@ -1,2 +1,3 @@
+bin/*.pyc
 local/users.csv
 local/ldap.conf
