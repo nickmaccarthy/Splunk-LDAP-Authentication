@@ -123,11 +123,11 @@ def userLogin( info ):
 
     if found_user:
         print SUCCESS
-        logger.info('message="Login Success" type="login" outcome="success" user=%s script_return="%s" domain_controller="%s"' % ( BIND_DN, SUCCESS, LDAP_SERVER ))
+        logger.info('message="Login Success" type="login" outcome="success" user="%s" script_return="%s" domain_controller="%s"' % ( BIND_DN, SUCCESS, LDAP_SERVER ))
 
     else:
         print FAILED
-        logger.info('message="Login Failure" type="login" outcome="failure" user=%s script_return="%s" domain_controller="%s"' % ( BIND_DN, FAILED, LDAP_SERVER ) )
+        logger.info('message="Login Failure" type="login" outcome="failure" user="%s" script_return="%s" domain_controller="%s"' % ( BIND_DN, FAILED, LDAP_SERVER ) )
 
 
 
@@ -144,7 +144,8 @@ def getUserInfo( infoIn ):
         else:
             username = ourinfo['username']
 
-        outStr = SUCCESS + " --userInfo=" + ";" + username + ";" + ourinfo['fullname'] + ";" + ourinfo['roles']
+        #outStr = SUCCESS + " --userInfo=" + ";;" + username + ";" + ourinfo['fullname'] + ";" + ourinfo['roles']
+        outStr = SUCCESS + userinfo.createFormattedUser(username, ourinfo['fullname'], ourinfo['roles'])
 
         logger.info('getUserInfo - message="found user", outcome="success", username="%s", outStr="%s"' % ( infoIn['username'], outStr))
 

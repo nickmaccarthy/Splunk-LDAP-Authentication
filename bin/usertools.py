@@ -72,12 +72,28 @@ class usertools(object):
         for k,v in self.users.iteritems():
 
             username = k
-            fullname = v[1]
-            roles = v[2]
+            fullname = v[2]
+            roles = v[3]
 
-            out += ' --userInfo=' + username.lower() + ';' + fullname + ';' + roles
+            #out += ' --userInfo=' + username.lower() + ';' + fullname + ';' + roles
+            out += self.createFormattedUser(username, fullname, roles)
 
         return out
+
+
+    def createFormattedUser(self, username='', fullname='', roles=''):
+
+        
+        try:
+
+         user = '--userInfo=' + ';' + username.lower() + ';' + fullname + ';' + roles + "\n"
+
+         return user
+
+        except Exception, e:
+
+            return
+            #logger.error('error in CreateFormattedUser: %s' % ( e ))
 
 
     def case_insensitive_key(self, a,k):
