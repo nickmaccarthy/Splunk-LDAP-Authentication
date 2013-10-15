@@ -1,0 +1,22 @@
+<view template="dashboard.html">
+  <label>LDAP User List</label>
+  <module name="AccountBar" layoutPanel="appHeader"/>
+  <module name="AppBar" layoutPanel="navigationHeader"/>
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">*</param>
+    <param name="clearOnJobDispatch">False</param>
+    <param name="maxSize">1</param>
+  </module>
+
+  <module name="StaticContentSample" layoutPanel="panel_row1_col1">
+    <param name="text"><![CDATA[
+    <h1>User List</h1>
+    <p>A list of users currently provisioned for AD/LDAP authentication on this host.</p>
+    ]]></param>
+  </module>
+
+  <module name="HiddenSearch" layoutPanel="panel_row2_col1" group="User List" autoRun="True">
+    <module name="GetUsers"></module>
+  </module>
+</view>
+

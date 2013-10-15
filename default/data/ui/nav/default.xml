@@ -1,0 +1,5 @@
+<nav>
+    <collection lable='Example'>
+        <view name="Default" />
+    </collection>
+</nav>
